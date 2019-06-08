@@ -9,7 +9,7 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 
-class SongAdapter(private val records: List<Record>): RecyclerView.Adapter<SongAdapter.SongViewHolder>() {
+class SongAdapter(private val records: List<Record>) : RecyclerView.Adapter<SongAdapter.SongViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): SongViewHolder {
         val view = LayoutInflater.from(parent.context)
@@ -26,7 +26,7 @@ class SongAdapter(private val records: List<Record>): RecyclerView.Adapter<SongA
         holder.bind(records[position])
     }
 
-    class SongViewHolder(itemView: View): RecyclerView.ViewHolder(itemView) {
+    class SongViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
         init {
             itemView.setOnClickListener {
@@ -44,11 +44,11 @@ class SongAdapter(private val records: List<Record>): RecyclerView.Adapter<SongA
             loadCover(song.path, songCover)
         }
 
-        private fun loadCover(path: String, image: ImageView){
+        private fun loadCover(path: String, image: ImageView) {
             val dataRetriever = MediaMetadataRetriever()
             dataRetriever.setDataSource(path)
             val cover = dataRetriever.embeddedPicture
-            if(cover != null) {
+            if (cover != null) {
                 val coverImage = BitmapFactory.decodeByteArray(cover, 0, cover.size)
                 image.setImageBitmap(coverImage)
             } else {
@@ -56,8 +56,6 @@ class SongAdapter(private val records: List<Record>): RecyclerView.Adapter<SongA
             }
         }
     }
-
-
 
 
 }

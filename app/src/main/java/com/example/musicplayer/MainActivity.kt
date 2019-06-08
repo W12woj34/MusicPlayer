@@ -132,8 +132,7 @@ class MainActivity : AppCompatActivity(), ActivityCompat.OnRequestPermissionsRes
     }
 
     companion object {
-        const val MP_KEY_NOTIFICATION_CHANNEL_ID = "NOT_CHANNEL_ID"
-
+        const val MP_KEY_NOTIFICATION_CHANNEL_ID = "NOTIF_CHANNEL_ID"
         private const val MP_KEY_NOTIFICATION_CHANNEL_NAME = "PLAYER_CHANNEL"
     }
 

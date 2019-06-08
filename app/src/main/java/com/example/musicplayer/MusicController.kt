@@ -37,8 +37,8 @@ class MusicController(context: Context) :
         }
     }
 
-    fun songPicked(songIndex: Int) {
-        ms.setSong(songIndex)
+    fun songPicked(index: Int) {
+        ms.setSong(index)
         ms.prepareSong()
         show()
     }
