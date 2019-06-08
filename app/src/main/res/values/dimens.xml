@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="match">0dp</dimen>
+    <dimen name="divider_height">1dp</dimen>
+    <dimen name="margin_standard">8dp</dimen>
+    <dimen name="margin_half">4dp</dimen>
+    <dimen name="margin_quarter">2dp</dimen>
+    <dimen name="margin_oneEight">1dp</dimen>
+    <dimen name="cover_dimen">125dp</dimen>
+</resources>
