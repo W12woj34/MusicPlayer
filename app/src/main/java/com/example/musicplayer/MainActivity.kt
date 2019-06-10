@@ -11,16 +11,13 @@ import android.os.Bundle
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
 import android.content.Context
+import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity(), ActivityCompat.OnRequestPermissionsResultCallback {
 
-    private val myPermissionReadExternalStorage = 667
+
     private lateinit var records: List<Record>
-    private lateinit var recyclerView: RecyclerView
-    private lateinit var songAdapter: SongAdapter
-    private lateinit var recyclerLayoutManager: LinearLayoutManager
 
     lateinit var mc: MusicController
 
@@ -31,12 +28,8 @@ class MainActivity : AppCompatActivity(), ActivityCompat.OnRequestPermissionsRes
         checkPermission()
         queryDevice()
 
-        recyclerLayoutManager = LinearLayoutManager(this)
-        songAdapter = SongAdapter(records)
-        recyclerView = findViewById<RecyclerView>(R.id.recycler_view).apply {
-            layoutManager = recyclerLayoutManager
-            adapter = songAdapter
-        }
+        mainView.layoutManager = LinearLayoutManager(this)
+        mainView.adapter = SongAdapter(records)
 
         mc = MusicController(this, records)
         createNotificationChannel()
@@ -132,6 +125,7 @@ class MainActivity : AppCompatActivity(), ActivityCompat.OnRequestPermissionsRes
     }
 
     companion object {
+        private const val myPermissionReadExternalStorage = 667
         const val MP_KEY_NOTIFICATION_CHANNEL_ID = "NOTIF_CHANNEL_ID"
         private const val MP_KEY_NOTIFICATION_CHANNEL_NAME = "PLAYER_CHANNEL"
     }
